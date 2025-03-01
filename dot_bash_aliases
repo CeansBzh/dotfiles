@@ -1,0 +1,24 @@
+# bash
+alias reload='source ~/.bashrc'
+alias ll='ls -l --almost-all --human-readable --color=auto'
+
+# PHP
+alias change-php='sudo update-alternatives --config php'
+
+# Laravel
+alias sail='[ -f sail ] && bash sail || bash vendor/bin/sail'
+pint() {
+  PINT=$([ -f "vendor/bin/pint" ] && echo "vendor/bin/pint" || echo "pint")
+  "$PINT" --preset laravel $@
+}
+alias stan='vendor/bin/phpstan'
+alias sa='sail artisan'
+alias refrseed='sa migrate:reset && sa migrate --seed'
+
+# Docker
+alias dc='docker compose'
+alias dc-composer='docker compose exec php composer'
+alias dca='docker compose exec php php artisan'
+
+# Python
+alias python=python3
