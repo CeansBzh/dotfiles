@@ -1,6 +1,6 @@
 # bash
 alias reload='source ~/.bashrc'
-alias ll='ls -l --almost-all --human-readable --color=auto'
+alias ll='ls -Alh'
 
 # PHP
 alias change-php='sudo update-alternatives --config php'
@@ -22,3 +22,6 @@ alias dca='docker compose exec php php artisan'
 
 # Python
 alias python=python3
+
+# Autres
+alias cz=chezmoi
