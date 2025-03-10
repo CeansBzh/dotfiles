@@ -6,22 +6,32 @@ alias ll='ls -Alh'
 alias change-php='sudo update-alternatives --config php'
 
 # Laravel
-alias sail='[ -f sail ] && bash sail || bash vendor/bin/sail'
+alias sail='[ -f sail ] && sh sail || sh vendor/bin/sail'
 pint() {
   PINT=$([ -f "vendor/bin/pint" ] && echo "vendor/bin/pint" || echo "pint")
   "$PINT" --preset laravel $@
 }
-alias stan='vendor/bin/phpstan'
+alias stan='vendor/bin/phpstan analyse'
+alias sup='sail up -d'
 alias sa='sail artisan'
 alias refrseed='sa migrate:reset && sa migrate --seed'
+alias sail-composer="docker run --rm -u "$(id -u):$(id -g)" -v "$(pwd):/var/www/html" -w /var/www/html laravelsail/php83-composer:latest composer"
 
 # Docker
 alias dc='docker compose'
-alias dc-composer='docker compose exec php composer'
-alias dca='docker compose exec php php artisan'
+alias dc-composer='dc exec php composer'
+alias dca='dc exec php php artisan'
+
+# Docker & Wordpress
+alias wpcli="dc run --rm wpcli"
+alias wpcli-search-replace="dc run --rm wpcli search-replace"
 
 # Python
 alias python=python3
+
+# Tar
+alias maketar='tar -czvf'
+alias readtar='tar -xzvf'
 
 # Autres
 alias cz=chezmoi

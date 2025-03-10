@@ -13,3 +13,7 @@ if [ ! -d "$HOME/.nvm" ]; then
   # Install the latest version of Node.js
   nvm install node
 fi
+
+# Install bitwarden
+pack='@bitwarden/cli'
+npm list -g | grep -q $pack || npm install -g $pack --no-shrinkwrap

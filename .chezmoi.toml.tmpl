@@ -1,0 +1,7 @@
+{{/* boolean feature tags */}}
+{{- $email := promptStringOnce . "Adresse mail" "Quelle est l'adresse mail à utiliser ?" -}}
+{{- $work := promptBoolOnce . "Travail" "Est-ce que cet ordinateur est un ordinateur de travail ? (true/false)" -}}
+
+[data]
+    email = {{ $email | quote }}
+    work = {{ $work }}
