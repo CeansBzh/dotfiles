@@ -1,0 +1,39 @@
+#!/bin/bash
+
+KEYPATH=~/.ssh/id_ed25519
+
+printf "Génération d'une nouvelle clé SSH pour cet appareil\n\n"
+
+# Lecture du mot de passe désiré
+read -s -p "Entrer la phrase de passe de la nouvelle clé: " passphrase
+printf "\n"
+
+# Confirmation du mot de passe
+read -s -p "Confirmer la phrase de passe: " passphrase_confirm
+printf "\n"
+
+# Vérification de la correspondance des mots de passe
+if [ "$passphrase" != "$passphrase_confirm" ]; then
+    printf "Les phrases de passe ne correspondent pas.\n\n"
+    exit 1
+fi
+
+# Lecture du commentaire désiré
+read -p "Entrer le commentaire: " comment
+printf "\n"
+
+# Génération de la clé
+ssh-keygen -t ed25519 -C "$comment" -P "$passphrase" -f $KEYPATH
+
+{{ if (.chezmoi.kernel.osrelease | lower | contains "microsoft") }}
+# Ajout de la clé publique au presse-papier Windows
+cat $KEYPATH.pub | clip.exe
+{{ end }}
+
+GREEN='\033[0;32m'
+NC='\033[0m' # No Color
+printf "\n\n${GREEN}Clé SSH générée avec succès.${NC}\n"
+
+{{ if (.chezmoi.kernel.osrelease | lower | contains "microsoft") }}
+printf "La clé publique (${KEYPATH}.pub) a été ajoutée au presse-papier.\n\n"
+{{ end }}
