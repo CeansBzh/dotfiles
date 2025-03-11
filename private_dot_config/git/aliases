@@ -1,0 +1,9 @@
+[alias]
+    wip = !sh -c 'git add -A && git commit -m "WIP"'
+    unwip = "!f() { \
+        if [ \"$(git log -1 --pretty=format:%B)\" = \"WIP\" ]; then \
+            git reset --soft HEAD~; \
+        else \
+            echo \"No WIP commit found\"; \
+        fi; \
+    }; f"
