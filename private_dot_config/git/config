@@ -1,3 +1,7 @@
 [user]
 	name = CeansBzh
 	email = {{ .email | quote }}
+
+# Aliases
+[include]
+    path=~/.config/git/aliases

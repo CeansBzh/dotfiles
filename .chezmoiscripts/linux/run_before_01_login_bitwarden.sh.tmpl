@@ -1,2 +1,13 @@
 #!/bin/bash
+if ! command -v bw &> /dev/null
+then
+    echo "Bitwarden CLI n'est pas installé. Veuillez l'installer avant de continuer."
+    exit 1
+fi
+
+if bw login --check &> /dev/null
+then
+    exit 0
+fi
+
 export BW_SESSION=$(bw login {{ .email }} --raw) 
