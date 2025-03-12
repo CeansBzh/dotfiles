@@ -1,0 +1,6 @@
+packages:
+  linux:
+    apt:
+      common: # Installés sur tous les appareils
+        - git
+        - unzip

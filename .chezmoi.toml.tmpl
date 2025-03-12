@@ -1,7 +1,14 @@
-{{/* boolean feature tags */}}
+{{/* Définition des variables globales */}}
 {{- $email := promptStringOnce . "Adresse mail" "Quelle est l'adresse mail à utiliser ?" -}}
 {{- $work := promptBoolOnce . "Travail" "Est-ce que cet ordinateur est un ordinateur de travail ? (true/false)" -}}
+
+{{/* Identification de la distribution du système */}}
+{{- $osid := .chezmoi.os -}}
+{{- if hasKey .chezmoi.osRelease "id" -}}
+{{-   $osid = printf "%s-%s" .chezmoi.os .chezmoi.osRelease.id -}}
+{{- end -}}
 
 [data]
     email = {{ $email | quote }}
     work = {{ $work }}
+    osid = {{ $osid | quote }}
