@@ -1,0 +1,1 @@
+Set-Alias -Name cz -Value chezmoi

@@ -6,8 +6,15 @@ This repository contains my dotfiles. Managed with [chezmoi](https://www.chezmoi
 
 Run the following command to install chezmoi and apply the configuration:
 
+Linux:
 ```bash
 sh -c "$(curl -fsLS get.chezmoi.io/lb)" -- init --apply CeansBzh
+```
+
+Windows:
+```powershell
+Set-ExecutionPolicy RemoteSigned –Scope Process
+iex "&{$(irm 'https://get.chezmoi.io/ps1')} -- init --apply --ssh --depth 1 --purge-binary CeansBzh" // TODO: Test this command
 ```
 
 > chezmoi will be installed in `~/.local/bin/chezmoi` and the dotfiles will be cloned in `~/.local/share/chezmoi`.

@@ -12,3 +12,12 @@
     email = {{ $email | quote }}
     work = {{ $work }}
     osid = {{ $osid | quote }}
+
+{{ if eq .chezmoi.os "windows" }}
+[cd]
+   command = "pwsh"
+{{ end }}
+
+ [interpreters.ps1]
+    command = "pwsh"
+    args = ["-NoLogo"]

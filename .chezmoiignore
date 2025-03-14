@@ -1,2 +1,19 @@
 README.md
 .vscode
+
+{{ if ne .chezmoi.os "linux" }}
+# Not Linux
+.chezmoiscripts/linux/**
+.config/systemd
+.ssh/**
+
+.bash*
+.profile
+{{ end }}
+
+{{ if ne .chezmoi.os "windows" }}
+# Not Windows
+.chezmoiscripts/windows/**
+AppData/**
+Documents/**
+{{ end }}

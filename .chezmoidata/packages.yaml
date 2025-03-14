@@ -1,6 +1,15 @@
+# Packages to install on init
+# os:
+#   package manager:
+#     scope (common = all computers, work = only work computers, etc.):
+
 packages:
   linux:
     apt:
-      common: # Installés sur tous les appareils
+      common:
         - git
         - unzip
+  windows:
+    winget:
+      common:
+        - Git.Git
