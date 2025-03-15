@@ -1,0 +1,1 @@
+git -C "$env:CHEZMOI_WORKING_TREE" remote set-url origin git@github.com:CeansBzh/dotfiles.git
