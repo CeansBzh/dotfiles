@@ -1,0 +1,13 @@
+[user]
+	name = CeansBzh
+	email = {{ .email | quote }}
+
+# Aliases
+[include]
+    path=~/.config/git/aliases
+
+{{ if eq .chezmoi.os "windows" }}
+[core]
+	autocrlf = false
+	eol = lf
+{{ end }}

@@ -1,8 +1,11 @@
 {
     "files.associations": {
-        "*.json": "json",
-        "*.md": "markdown",
+        ".chezmoiignore": "ignore",
+        "*.json*": "json",
+        "*.yaml*": "yaml",
+        "*.md*": "markdown",
         "*.toml*": "toml",
-        "*": "shellscript"
+        "*.ps1*": "powershell",
+        "*.sh*": "shellscript",
     }
 }
