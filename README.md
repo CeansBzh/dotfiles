@@ -15,6 +15,10 @@ Windows:
 ```powershell
 Set-ExecutionPolicy RemoteSigned –Scope Process
 iex "&{$(irm 'https://get.chezmoi.io/ps1')} -- init --apply --ssh --depth 1 --purge-binary CeansBzh" // TODO: Test this command
+
+Set-Service ssh-agent -StartupType Manual
+Start-Service ssh-agent
+Ssh-Add "$env:USERPROFILE/.ssh/id_ed25519"
 ```
 
 > chezmoi will be installed in `~/.local/bin/chezmoi` and the dotfiles will be cloned in `~/.local/share/chezmoi`.

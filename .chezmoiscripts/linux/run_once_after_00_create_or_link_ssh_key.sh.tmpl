@@ -1,5 +1,30 @@
 #!/bin/bash
 
+{{ if (.chezmoi.kernel.osrelease | lower | contains "microsoft") }}
+# If running on WSL, check if a key pair already exists
+WINUSER=`cmd.exe /c 'echo %USERNAME%' | tr -d '\r'`
+
+if [ -f /mnt/c/Users/$WINUSER/.ssh/id_ed25519 ]; then
+    printf "Une paire de clés SSH existe déjà pour cet appareil. Montage de la paire dans WSL...\n\n"
+
+    # If the .ssh already exists, backup it
+    if [ -d ~/.ssh ]; then
+        mv ~/.ssh ~/.ssh.bak
+    fi
+
+    # Create .ssh directory with correct permissions
+    mkdir -m 700 ~/.ssh
+
+cat << EOF | sudo tee -a /etc/fstab
+C:\Users\\$WINUSER\.ssh\ /home/$USER/.ssh drvfs rw,noatime,uid=`id -u`,gid=`id -g`,case=off,umask=0077,fmask=0177 0 0
+EOF
+
+    sudo mount /home/$USER/.ssh
+
+    exit 0
+fi
+{{ end }}
+
 KEYPATH=~/.ssh/id_ed25519
 
 printf "Génération d'une nouvelle clé SSH pour cet appareil\n\n"
