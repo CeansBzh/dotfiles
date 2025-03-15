@@ -17,3 +17,6 @@ fi
 # Install bitwarden
 pack='@bitwarden/cli'
 npm list -g | grep -q $pack || npm install -g $pack --no-shrinkwrap
+
+# Reload the shell
+source ~/.bashrc
