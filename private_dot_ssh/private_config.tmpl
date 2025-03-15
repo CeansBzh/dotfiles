@@ -1,0 +1,9 @@
+{{- if (.work) -}}
+{{- (bitwarden "item" "b4770e5d-94e5-46b8-87ef-b29c0101dabe").notes -}}
+{{- end -}}
+
+Host *
+    IdentityFile ~/.ssh/id_ed25519
+    IdentitiesOnly yes
+
+AddKeysToAgent  yes

@@ -62,18 +62,20 @@
     {
         "defaults": 
         {
+            "colorScheme": "Catppuccin Macchiato",
             "font": 
             {
-                "face": "MesloLGM Nerd Font"
+                "face": "CaskaydiaCove Nerd Font",
+                "size": 13,
+                "weight": "semi-light"
             }
         },
         "list": 
         [
             {
-                "colorScheme": "Dark+",
-                "font": 
+                "colorScheme": 
                 {
-                    "face": "CaskaydiaCove Nerd Font"
+                    "light": "Catppuccin Macchiato"
                 },
                 "guid": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
                 "hidden": false,
@@ -87,14 +89,11 @@
                 "backgroundImage": null,
                 "backgroundImageOpacity": 0.2,
                 "bellStyle": "window",
-                "colorScheme": "Ottosson",
-                "experimental.retroTerminalEffect": false,
-                "font": 
+                "colorScheme": 
                 {
-                    "face": "Cascadia Code",
-                    "size": 13,
-                    "weight": "semi-light"
+                    "light": "Catppuccin Macchiato"
                 },
+                "experimental.retroTerminalEffect": false,
                 "guid": "{2c4de342-38b7-51cf-b940-2309a097f518}",
                 "hidden": false,
                 "name": "Ubuntu",
@@ -134,8 +133,58 @@
             }
         ]
     },
-    "schemes": [],
-    "theme": "dark",
-    "themes": [],
+    "schemes": 
+    [
+        {
+            "background": "#24273A",
+            "black": "#494D64",
+            "blue": "#8AADF4",
+            "brightBlack": "#5B6078",
+            "brightBlue": "#8AADF4",
+            "brightCyan": "#8BD5CA",
+            "brightGreen": "#A6DA95",
+            "brightPurple": "#F5BDE6",
+            "brightRed": "#ED8796",
+            "brightWhite": "#A5ADCB",
+            "brightYellow": "#EED49F",
+            "cursorColor": "#F4DBD6",
+            "cyan": "#8BD5CA",
+            "foreground": "#CAD3F5",
+            "green": "#A6DA95",
+            "name": "Catppuccin Macchiato",
+            "purple": "#F5BDE6",
+            "red": "#ED8796",
+            "selectionBackground": "#5B6078",
+            "white": "#B8C0E0",
+            "yellow": "#EED49F"
+        }
+    ],
+    "theme": "Catppuccin Macchiato",
+    "themes": 
+    [
+        {
+            "name": "Catppuccin Macchiato",
+            "tab": 
+            {
+                "background": "#24273AFF",
+                "iconStyle": "default",
+                "showCloseButton": "always",
+                "unfocusedBackground": null
+            },
+            "tabRow": 
+            {
+                "background": "#1E2030FF",
+                "unfocusedBackground": "#181926FF"
+            },
+            "window": 
+            {
+                "applicationTheme": "dark",
+                "experimental.rainbowFrame": false,
+                "frame": null,
+                "unfocusedFrame": null,
+                "useMica": false
+            }
+        }
+    ],
     "useAcrylicInTabRow": false
 }

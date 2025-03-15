@@ -4,12 +4,9 @@ This repository contains my dotfiles. Managed with [chezmoi](https://www.chezmoi
 
 ## Getting started
 
-Run the following command to install chezmoi and apply the configuration:
+>If using WSL make sure to install the Dotfiles on Windows first
 
-Linux:
-```bash
-sh -c "$(curl -fsLS get.chezmoi.io/lb)" -- init --apply CeansBzh
-```
+Run the following command to install chezmoi and apply the configuration:
 
 Windows:
 ```powershell
@@ -19,6 +16,11 @@ iex "&{$(irm 'https://get.chezmoi.io/ps1')} -- init --apply --ssh --depth 1 --pu
 Set-Service ssh-agent -StartupType Manual
 Start-Service ssh-agent
 Ssh-Add "$env:USERPROFILE/.ssh/id_ed25519"
+```
+
+Linux:
+```bash
+sh -c "$(curl -fsLS get.chezmoi.io/lb)" -- init --apply CeansBzh
 ```
 
 > chezmoi will be installed in `~/.local/bin/chezmoi` and the dotfiles will be cloned in `~/.local/share/chezmoi`.

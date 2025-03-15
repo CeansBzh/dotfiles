@@ -5,6 +5,7 @@ README.md
 # Not Linux
 .chezmoiscripts/linux/**
 .config/systemd
+.config/starship.toml
 
 .bash*
 .profile
