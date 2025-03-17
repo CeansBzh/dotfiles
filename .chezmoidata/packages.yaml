@@ -9,7 +9,11 @@ packages:
       common:
         - git
         - unzip
+    npm:
+      common:
+        - "@bitwarden/cli"
   windows:
     winget:
       common:
         - Git.Git
+        - Bitwarden.Bitwarden

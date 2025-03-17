@@ -16,3 +16,7 @@ set -eufo pipefail
 {{ end -}}
 
 {{- end }}
+
+{{ range .packages.linux.npm.common }}
+npm install -g {{ . | quote }} --no-shrinkwrap
+{{ end -}}
