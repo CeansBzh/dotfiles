@@ -16,4 +16,4 @@ packages:
     winget:
       common:
         - Git.Git
-        - Bitwarden.Bitwarden
+        - Bitwarden.CLI
