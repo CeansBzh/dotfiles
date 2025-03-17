@@ -27,6 +27,10 @@
                 "splitMode": "duplicate"
             },
             "id": "User.splitPane.A6751878"
+        },
+        {
+            "command": "closePane",
+            "id": "User.closePane"
         }
     ],
     "alwaysShowNotificationIcon": false,
@@ -35,6 +39,14 @@
     "defaultProfile": "{2c4de342-38b7-51cf-b940-2309a097f518}",
     "keybindings": 
     [
+        {
+            "id": "User.splitPane.A6751878",
+            "keys": "ctrl+shift+d"
+        },
+        {
+            "id": "User.closePane",
+            "keys": "ctrl+shift+x"
+        },
         {
             "id": "User.copy.644BA8F2",
             "keys": "ctrl+c"
@@ -48,7 +60,7 @@
             "keys": "ctrl+shift+f"
         },
         {
-            "id": "User.splitPane.A6751878",
+            "id": "Terminal.DuplicateTab",
             "keys": "alt+shift+d"
         }
     ],
@@ -112,12 +124,6 @@
                 "hidden": false,
                 "name": "DockerUbuntu",
                 "source": "Microsoft.WSL"
-            },
-            {
-                "guid": "{4dd1e689-b517-5f39-947d-78e8a8bdf958}",
-                "hidden": false,
-                "name": "Ubuntu 20.04.6 LTS",
-                "source": "CanonicalGroupLimited.Ubuntu20.04LTS_79rhkp1fndgsc"
             },
             {
                 "guid": "{45e71397-9201-5649-b3b9-612861ed6ae3}",
