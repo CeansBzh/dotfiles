@@ -24,6 +24,7 @@ alias sail-composer="docker run --rm -u "$(id -u):$(id -g)" -v "$(pwd):/var/www/
 
 # Docker
 alias dc='docker compose'
+alias docker-compose="docker compose"
 alias dc-composer='docker compose exec php composer'
 alias dca='docker compose exec php php artisan'
 
