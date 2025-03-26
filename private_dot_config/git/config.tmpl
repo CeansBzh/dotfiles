@@ -1,13 +1,14 @@
 [user]
-	name = CeansBzh
-	email = {{ .email | quote }}
+    name = {{ .name | quote }}
+    email = {{ .email | quote }}
 
 # Aliases
 [include]
-    path=~/.config/git/aliases
+    path = ~/.config/git/aliases
+    path = ~/.config/git/safe
 
-{{ if eq .chezmoi.os "windows" }}
+{{- if eq .chezmoi.os "windows" }}
 [core]
 	autocrlf = false
 	eol = lf
-{{ end }}
+{{- end }}

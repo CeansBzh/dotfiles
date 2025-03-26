@@ -1,5 +1,6 @@
 {{/* Définition des variables globales */}}
 {{- $email := promptStringOnce . "Adresse mail" "Quelle est l'adresse mail à utiliser ?" -}}
+{{- $name := promptStringOnce . "Nom" "Quelle est le nom à utiliser ?" -}}
 {{- $work := promptBoolOnce . "Travail" "Est-ce que cet ordinateur est un ordinateur de travail ? (true/false)" -}}
 
 {{/* Identification de la distribution du système */}}
@@ -10,6 +11,7 @@
 
 [data]
     email = {{ $email | quote }}
+    name = {{ $name | quote }}
     work = {{ $work }}
     osid = {{ $osid | quote }}
     nerd_fonts = "caskaydia-cove"
@@ -19,6 +21,6 @@
    command = "pwsh"
 {{ end }}
 
- [interpreters.ps1]
-    command = "pwsh"
-    args = ["-NoLogo"]
+[interpreters.ps1]
+   command = "pwsh"
+   args = ["-NoLogo"]
