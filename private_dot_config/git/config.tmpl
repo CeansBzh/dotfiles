@@ -1,14 +1,17 @@
 [user]
-    name = {{ .name | quote }}
+    name = CeansBzh
     email = {{ .email | quote }}
-
-# Aliases
-[include]
-    path = ~/.config/git/aliases
-    path = ~/.config/git/safe
 
 {{- if eq .chezmoi.os "windows" }}
 [core]
 	autocrlf = false
 	eol = lf
 {{- end }}
+
+# Configurations externes
+[include]
+    path = ~/.config/git/aliases
+    path = ~/.config/git/safe
+
+[includeIf "gitdir/i:~/Travail/"]
+  path = ~/.config/git/config.work
