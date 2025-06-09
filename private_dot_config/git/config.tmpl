@@ -1,6 +1,7 @@
 [user]
     name = CeansBzh
     email = {{ .email | quote }}
+    signingkey = ~/.ssh/id_ed25519.pub
 
 {{- if eq .chezmoi.os "windows" }}
 [core]
@@ -13,6 +14,9 @@
 
 [pull]
     rebase = false
+
+[gpg]
+    format = ssh
 
 # Configurations externes
 [include]
