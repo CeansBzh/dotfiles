@@ -4,6 +4,9 @@ alias ll='ls -Alh'
 alias ..='cd ..'
 alias ...='cd ../..'
 alias update='sudo apt update -y && sudo apt upgrade -y && sudo apt full-upgrade -y && sudo apt autoremove -y && sudo apt clean -y'
+mkdircd () {
+  mkdir -p "$@" && eval cd "\"\$$#\"";
+}
 
 # PHP
 alias change-php='sudo update-alternatives --config php'
