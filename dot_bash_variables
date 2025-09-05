@@ -1,2 +1,10 @@
 export EDITOR="code --wait"
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
+
+# set PATH and environment for go if it exists
+if [ -d "/usr/local/go" ] ; then
+    export GOPATH=$HOME/go
+    export GOBIN=$GOPATH/bin
+    PATH="$GOBIN:/usr/local/go/bin:$PATH"
+    export GOPROXY=https://proxy.golang.org,direct
+fi
