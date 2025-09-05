@@ -1,5 +1,7 @@
 export EDITOR="code --wait"
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
 
 # set PATH and environment for go if it exists
 if [ -d "/usr/local/go" ] ; then
