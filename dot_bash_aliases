@@ -23,7 +23,6 @@ alias sa='sail artisan'
 alias sat='sail artisan test'
 alias satf='sail artisan test --filter'
 alias refrseed='sail artisan migrate:reset && sail artisan migrate --seed'
-alias sail-composer="docker run --rm -u "$(id -u):$(id -g)" -v "$(pwd):/var/www/html" -w /var/www/html laravelsail/php83-composer:latest composer"
 
 # Docker
 alias dc='docker compose'
