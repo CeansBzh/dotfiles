@@ -1,0 +1,14 @@
+#!/bin/bash
+
+{{ if (.chezmoi.kernel.osrelease | lower | contains "microsoft") }}
+# If running on WSL, create a symlink to the Windows Downloads directory
+WINUSER=`cmd.exe /c 'echo %USERNAME%' | tr -d '\r'`
+if [ ! -L ~/Downloads ]; then
+    # If the Downloads directory is not an existing symlink
+    if [ -d ~/Downloads ]; then
+        # If the Downloads directory already exists
+        mv ~/Downloads ~/Downloads.bak
+    fi
+    ln -s /mnt/c/Users/$WINUSER/Downloads ~/Downloads
+fi
+{{ end }}
