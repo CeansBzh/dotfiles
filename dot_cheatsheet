@@ -1,0 +1,14 @@
+cheatsheet() {
+    cat << 'EOF'
+╔════════════════════════════════════════════════════════════════════════════╗
+║                          COMMAND CHEATSHEET                                ║
+╚════════════════════════════════════════════════════════════════════════════╝
+
+🐳 DOCKER
+    docker exec -i <ID_CONTENEUR> mariadb -u<USER> -p<PASSWORD> core < <SQL_FILE>.sql
+
+🚾 WORDPRESS
+    docker-compose run --rm wpcli search-replace "https://old.com" "https://new.fr" --all-tables
+
+EOF
+}
