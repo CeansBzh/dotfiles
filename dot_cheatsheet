@@ -10,5 +10,8 @@ cheatsheet() {
 🚾 WORDPRESS
     docker-compose run --rm wpcli search-replace "https://old.com" "https://new.fr" --all-tables
 
+🛠️ PLESK
+    /opt/plesk/php/<VERSION_PHP>/bin/php /usr/lib/plesk-9.0/composer.phar
+
 EOF
 }
