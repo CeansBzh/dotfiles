@@ -6,6 +6,7 @@ cheatsheet() {
 
 🖥️ LINUX
     ln -s /chemin/vers/cible /chemin/vers/raccourci
+    curl -w "%{url_effective}\n" -I -L -s -S https://url-a-verifier.com  -o /dev/null
 
 🐳 DOCKER
     docker exec -i <ID_CONTENEUR> mariadb -u<USER> -p<PASSWORD> core < <SQL_FILE>.sql
