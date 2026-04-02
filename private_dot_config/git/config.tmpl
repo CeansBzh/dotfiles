@@ -1,6 +1,8 @@
 [user]
     name = CeansBzh
-    email = {{ .email | quote }}
+    {{- if hasKey . "secrets" }}
+    email = {{ .secrets.data.personal.email | quote }}
+    {{- end }}
     signingkey = ~/.ssh/id_ed25519.pub
 
 {{- if eq .chezmoi.os "windows" }}

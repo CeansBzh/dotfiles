@@ -53,3 +53,25 @@ Pull and apply the latest changes:
 ```bash
 chezmoi update -v
 ```
+
+### Secrets
+
+Secrets are stored in Bitwarden and imported locally in `~/.chezmoidata/secrets.yml` using the `dotfiles-secrets` tool. This allows updates of the secrets without having to update the dotfiles, and the other way around. The idea and code for this system is taken from [this article by Mike Kasberg](https://www.mikekasberg.com/blog/2026/01/31/dotfiles-secrets-in-chezmoi.html).
+
+Unlock the vault and export the session key:
+
+```bash
+export BW_SESSION="$(bw-open)"
+```
+
+Update the cached secrets:
+
+```bash
+dotfiles-secrets install
+```
+
+Show diff between the cached secrets and the Bitwarden vault:
+
+```bash
+dotfiles-secrets diff
+```

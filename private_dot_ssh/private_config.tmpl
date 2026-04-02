@@ -1,11 +1,21 @@
-{{- if (.work) -}}
-{{- (bitwarden "item" "b4770e5d-94e5-46b8-87ef-b29c0101dabe").notes }}
+{{- if and .work (hasKey . "secrets") -}}
+{{- .secrets.ssh.work_config }}
+{{ end }}
+
+{{- if hasKey . "secrets" }}
+{{ .secrets.ssh.personal_config }}
 {{- end }}
 
-{{ (bitwarden "item" "149eb0d7-ebbd-46f0-8f25-b3370151e70a").notes }}
+Match host github.com exec "[[ $PWD == /home/*/Travail/* ]]"
+    IdentityFile ~/.ssh/id_ed25519_work
 
-Host *
+Match host github.com !exec "[[ $PWD == /home/*/Travail/* ]]"
     IdentityFile ~/.ssh/id_ed25519
+
+Host github.com
+    HostName github.com
+    User git
     IdentitiesOnly yes
 
-AddKeysToAgent  yes
+Host *
+    AddKeysToAgent  yes
