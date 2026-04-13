@@ -9,6 +9,7 @@ packages:
       common:
         - git
         - unzip
+        - jq
     npm:
       common:
         - "@bitwarden/cli"

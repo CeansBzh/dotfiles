@@ -18,5 +18,5 @@ set -eufo pipefail
 {{- end }}
 
 {{ range .packages.linux.npm.common }}
-npm install -g {{ . | quote }} --no-shrinkwrap
+npm install -g {{ . | quote }} --no-package-lock
 {{ end -}}
