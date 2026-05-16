@@ -1,11 +1,9 @@
-{{ if eq .osid "linux-debian" "linux-raspbian" "linux-ubuntu" -}}
+#!/bin/bash
 
 {{ $sudo := "sudo " -}}
 {{ if eq .chezmoi.username "root" -}}
 {{   $sudo = "" -}}
 {{ end -}}
-
-#!/bin/bash
 
 set -eufo pipefail
 
@@ -14,8 +12,6 @@ set -eufo pipefail
 {{ range .packages.linux.apt.common }}
 {{ $sudo }}apt-get install -y {{ . | quote }}
 {{ end -}}
-
-{{- end }}
 
 {{ range .packages.linux.npm.common }}
 npm install -g {{ . | quote }} --no-package-lock
