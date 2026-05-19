@@ -13,6 +13,8 @@ cheatsheet() {
 
 🚾 WORDPRESS
     docker-compose run --rm wpcli search-replace "https://old.com" "https://new.fr" --all-tables
+    docker-compose run --rm wordpress composer install --working-dir=/var/www/html/voy_content/themes/batiamenagement
+    docker run --rm -v $(pwd):/app -w /app node:20-slim npm install && npm run build
 
 🛠️ PLESK
     /opt/plesk/php/<VERSION_PHP>/bin/php /usr/lib/plesk-9.0/composer.phar
